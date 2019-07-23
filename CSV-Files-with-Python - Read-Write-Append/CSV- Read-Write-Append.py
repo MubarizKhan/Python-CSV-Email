@@ -7,11 +7,11 @@ with open("data.csv","w+") as csvfile:
     writer.writerow(["row 2","Description"])
     writer.writerow(["row 3","Descript"])
 
-"a" Append to a file--- add to the very end
-"w" writes to the file, w+ overwrites to the file
-"r" read only
-"r+" read & write
-"rb" read in binary form
+# "a" Append to a file--- add to the very end
+# "w" writes to the file, w+ overwrites to the file
+# "r" read only
+# "r+" read & write
+# "rb" read in binary form
 
 with open("data.csv","r") as csvfile:
     reader = csv.reader(csvfile)
