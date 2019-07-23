@@ -5,11 +5,12 @@ import smtplib
 host = "smtp.gmail.com"
 port = 587
 username = "mubarizkhan546@gmail.com"
-password = "onetreeone"
+password = ""
 class MessageUser:
     user_details = []
     messages = []
     email_details = []
+    
     base_message = """
     Hi {name} your purchase was of pkr{total} on the date: {date}
     run it down, let’s run the plane, no
@@ -18,6 +19,7 @@ class MessageUser:
     this mail was sent to a group of clients; via mubariz khan's python prompt terminal
     -Team SSEO
     """
+    
     def add_user(self,name,amount,email):
         name = name[0].upper() + name[1:].lower()
         amount = "%.2f" % (amount)
@@ -31,9 +33,14 @@ class MessageUser:
         if email != None:
             detail["Email"] = email
         self.user_details.append(detail)
+        
+        
     def get_details(self):
         return self.user_details
+    
+    
     def make_messages(self):
+        
         if len(self.user_details) > 0:
             for detail in self.get_details():
                 name = detail["name"]
@@ -56,7 +63,9 @@ class MessageUser:
                     self.messages.append(new_msg)
             return self.messages
         return []
+    
     def send_email(self):
+        
         self.make_messages()
         if len(self.email_details) > 0:
             for detail in email_details:
@@ -83,8 +92,6 @@ class MessageUser:
         
 obj = MessageUser()
 obj.add_user("Mubeen", 2345, "p176107@nu.edu.pk")
-obj.add_user("SAad", 758, "p176137@nu.edu.pk")
-obj.add_user("Hasaan jahaz", 1900, "p176157@nu.edu.pk")
 obj.add_user("Mubasher Mfused", 400, "p180143@nu.edu.pk")
 obj.get_details()
 obj.send_email()
