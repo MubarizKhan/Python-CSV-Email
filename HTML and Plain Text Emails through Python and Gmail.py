@@ -6,7 +6,7 @@ import smtplib
 host = "smtp.gmail.com"
 port = 587
 username = "mubarizkhan546@gmail.com"
-password = "onetreeone"
+password = ""
 mubeen = "p176107@nu.edu.pk"
 
 try:
